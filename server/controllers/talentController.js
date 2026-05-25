@@ -18,4 +18,21 @@ const getAvailableTasks = async (req, res) => {
   }
 };
 
-module.exports = { getAvailableTasks };
+// @desc  Get tasks assigned to the logged-in talent
+// @route GET /api/talent/tasks/mine
+// @access Talent
+const getMyTasks = async (req, res) => {
+  try {
+    // Intentional gap: no status filter — Approved, Rejected, and active tasks
+    // all come back mixed together with no grouping
+    // Intentional gap: no pagination
+    const tasks = await Task.find({ assignedTo: req.user._id })
+      .sort({ updatedAt: -1 });
+
+    res.json(tasks);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = { getAvailableTasks, getMyTasks };
