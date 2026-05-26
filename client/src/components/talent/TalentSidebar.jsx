@@ -1,4 +1,4 @@
-﻿import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
 const navItems = [
@@ -15,17 +15,8 @@ const TalentSidebar = () => {
     <aside className="fixed inset-y-0 left-0 w-[220px] bg-bg-surface border-r border-border flex flex-col px-3.5 py-6 z-50">
 
       {/* Brand */}
-      <div className="flex items-center gap-2.5 px-1.5 pb-6 border-b border-border mb-5">
-        <svg viewBox="0 0 40 40" fill="none" className="w-[34px] h-[34px] shrink-0">
-          <rect width="40" height="40" rx="10" fill="url(#ts-g)" />
-          <path d="M12 20L18 26L28 14" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          <defs>
-            <linearGradient id="ts-g" x1="0" y1="0" x2="40" y2="40">
-              <stop stopColor="#10b981" /><stop offset="1" stopColor="#059669" />
-            </linearGradient>
-          </defs>
-        </svg>
-        <span className="font-bold text-[14px] tracking-tight text-text-primary">TaskPipeline</span>
+      <div className="flex items-center justify-center pb-6 border-b border-border mb-5">
+        <img src="/modelsuite-talents.png" alt="TaskPipeline Logo" className="w-44 h-auto object-contain" />
       </div>
 
       {/* Nav */}

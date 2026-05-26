@@ -1,18 +1,10 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import API from '../api/axios';
 
-const Logo = ({ id }) => (
-  <svg viewBox="0 0 40 40" fill="none" className="w-11 h-11">
-    <rect width="40" height="40" rx="12" fill={`url(#${id})`} />
-    <path d="M12 20L18 26L28 14" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-    <defs>
-      <linearGradient id={id} x1="0" y1="0" x2="40" y2="40">
-        <stop stopColor="#6366f1" /><stop offset="1" stopColor="#8b5cf6" />
-      </linearGradient>
-    </defs>
-  </svg>
+const Logo = () => (
+  <img src="/modelsuite-talents.png" alt="Task Pipeline Logo" className="w-80 h-auto object-contain mx-auto block" />
 );
 
 const inputCls = 'w-full bg-bg-input border border-border rounded-[10px] px-4 py-3 text-[15px] text-text-primary outline-none placeholder:text-[#4e4a6e] focus:border-primary focus:ring-[3px] focus:ring-primary/20 transition-all font-sans';
@@ -45,7 +37,7 @@ const RegisterPage = () => {
         <div className="mb-6 relative z-10" style={{ filter: 'drop-shadow(0 4px 16px rgba(99,102,241,0.4))' }}>
           <Logo id="reg-grad" />
         </div>
-        <div className="mb-8 relative z-10">
+        <div className="mb-8 text-center relative z-10">
           <h1 className="text-[26px] font-bold tracking-tight text-text-primary mb-1.5">Task Pipeline</h1>
           <p className="text-sm text-text-muted">Create your account</p>
         </div>
