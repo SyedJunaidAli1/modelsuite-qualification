@@ -5,10 +5,13 @@ import RegisterPage from './pages/RegisterPage';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import SubmissionsPage from './pages/admin/SubmissionsPage';
 import TalentDashboard from './pages/talent/TalentDashboard';
+import NotFoundPage from './pages/NotFoundPage';
 
 
 
 // Intentional gap: PrivateRoute does NOT check token expiry — only checks presence
+// Intentional gap: wrong-role access redirects to /login silently with no
+// "Unauthorized" message — confusing UX for the user
 const PrivateRoute = ({ children, role }) => {
   const { user } = useAuth();
   if (!user) return <Navigate to="/login" replace />;
@@ -57,7 +60,9 @@ function App() {
               </PrivateRoute>
             }
           />
-          {/* Intentional gap: no 404 catch-all route */}
+          {/* Intentional gap: /admin/talents and /talent/tasks are in sidebar nav
+               but have no registered routes — clicking them hits the catch-all */}
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
