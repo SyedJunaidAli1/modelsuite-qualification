@@ -15,6 +15,9 @@ git checkout -b <your-assigned-branch-name>
 ```
 
 ## 3. Making Changes & Local Checks
+
+> **Scope of Work:** You are strongly advised to focus exclusively on your assigned module or task. However, if modifying another module or component is strictly necessary to successfully complete your assignment, you are permitted to do so. Please clearly document any such cross-module changes in your Pull Request.
+
 Before committing your code, please ensure it meets the project standards. Run the following checks locally:
 - **Client**: `cd client && npm run lint && npm run build`
 - **Server**: `cd server && npm run lint && npm run build`
