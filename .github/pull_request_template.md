@@ -2,7 +2,7 @@
 <!-- Describe what was changed and why. Be precise. -->
 <!-- Incomplete summaries will result in the PR being closed. -->
 
-## Preflight Checklist
+## Checklist
 
 > **Required before opening this PR:** Complete these checks locally to ensure the code is ready for review. PRs opened without these checks passing may be closed.
 
