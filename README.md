@@ -277,8 +277,6 @@ Please read the full guidelines in **[CONTRIBUTING.md](./CONTRIBUTING.md)** befo
 - PR Template requirements
 - Our automated CI/CD Pipeline (which automatically closes failing PRs)
 - Final submission requirements (PR link & Voice recorded video)
->>>>>>> 2640fc3b6f4df9e1541d5e918a243b96e58f6410
-
 ---
 
 ##  CODEOWNERS
