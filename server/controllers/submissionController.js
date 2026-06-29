@@ -55,6 +55,11 @@ const getSubmission = async (req, res) => {
       return res.status(404).json({ message: 'No submission found for this task' });
     }
 
+    if (req.user.role === 'Talent' &&
+         submission.talentId._id.toString() !== req.user._id.toString()) {
+       return res.status(403).json({ message: 'Access denied' });
+     }
+    
     res.json(submission);
   } catch (error) {
     res.status(500).json({ message: error.message });
